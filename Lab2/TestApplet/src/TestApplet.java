@@ -17,9 +17,9 @@ public class TestApplet extends Applet
 		int n = 1000, step = 10, q;
 		int[] x, y;
 		int[] t, d;
-		ArrayList tx = new ArrayList(),
-				  dx = new ArrayList(),
-				  l = new ArrayList();
+		ArrayList<Integer> tx = new ArrayList<>(),
+            dx = new ArrayList<>(),
+            l = new ArrayList<>();
 		NSARW w;
 		
 		w = new NSARW(n);

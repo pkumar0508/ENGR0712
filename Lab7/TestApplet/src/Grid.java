@@ -13,7 +13,7 @@ public class Grid
 	private Graphics[] g = {};
 	private final int SIZE;
 	private final int SCALE;
-	private HashMap map;
+	private HashMap<Position, Integer> map;
 	private final Color[] COLORS;
 	private final int[] ENERGIES;
 	
@@ -23,7 +23,7 @@ public class Grid
 		SIZE = size / scale;
 		COLORS = colors;
 		ENERGIES = energies;
-		map = new HashMap();
+		map = new HashMap<>();
 	}
 	
 	// basic functions

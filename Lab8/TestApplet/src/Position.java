@@ -40,9 +40,9 @@ public class Position
 	public int hashCode ()
 	{ return (250 + x * x * x * x) * (179 - y * y * y); }
 	
-	public ArrayList neighbors ()
+	public ArrayList<Position> neighbors ()
 	{
-		ArrayList l = new ArrayList();
+		ArrayList<Position> l = new ArrayList<>();
 		
 		l.add(new Position(x + 1, y + 1));
 		l.add(new Position(x + 1, y - 1));

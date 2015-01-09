@@ -7,7 +7,7 @@ import java.awt.Color;
 public class Grid
 {
 	// variables
-	private Hashtable grid;
+	private Hashtable<Position, Particle> grid;
 	private int SCALE;
 	private int SIZE;
 	
@@ -22,14 +22,14 @@ public class Grid
 	{
 		SCALE = 1;
 		SIZE = size;
-		grid = new Hashtable();
+		grid = new Hashtable<>();
 	}
 	
 	public Grid (int size, int scale)
 	{
 		SCALE = scale;
 		SIZE = size / scale;
-		grid = new Hashtable();
+		grid = new Hashtable<>();
 	}
 	
 	// public methods
@@ -126,7 +126,7 @@ public class Grid
 	
 	protected boolean hasESN (Position p)
 	{
-		ArrayList l = neighbors(p);
+		ArrayList<Position> l = neighbors(p);
 		boolean flag = false;
 		Particle q;
 		
@@ -145,7 +145,7 @@ public class Grid
 	
 	protected void nextPos (Position p, int r)
 	{
-		ArrayList l = neighbors(p);
+		ArrayList<Position> l = neighbors(p);
 		Position temp;
 		
 		for (int i = l.size() - 1; i >= 0; i--)
@@ -171,9 +171,9 @@ public class Grid
 	protected Position map (Position p)
 	{ return new Position(SIZE + p.x, SIZE - p.y); }
 	
-	protected ArrayList neighbors (Position p)
+	protected ArrayList<Position> neighbors (Position p)
 	{
-		ArrayList l = new ArrayList();
+		ArrayList<Position> l = new ArrayList<>();
 		
 		if (validPos(p.north()))	l.add(p.north());
 		if (validPos(p.south()))	l.add(p.south());

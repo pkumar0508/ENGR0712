@@ -15,14 +15,14 @@ public class Gridq
 	private Graphics[] g = {};
 	private final int SIZE;
 	private final int SCALE;
-	private HashSet s;
+	private HashSet<Position> s;
 	
 	// constructor
 	public Gridq (int size, int scale)
 	{
 		SCALE = scale;
 		SIZE = size / scale;
-		s = new HashSet();
+		s = new HashSet<>();
 	}
 	
 	// basic functions

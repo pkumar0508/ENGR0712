@@ -3,7 +3,7 @@ import java.awt.Graphics;
 
 public class Snake
 {
-	private LinkedList snake;
+	private LinkedList<Position> snake;
 	private final int SIZE;
 	private final int SCALE;
 	private static final Random rand = new Random();
@@ -13,7 +13,7 @@ public class Snake
 		SIZE = size / scale;
 		SCALE = scale;
 		
-		snake = new LinkedList();
+		snake = new LinkedList<>();
 		for (int i = 0; i < p.length; i++)
 			snake.add(p[i]);
 	}
@@ -22,7 +22,7 @@ public class Snake
 	{
 		boolean atHead[] = new boolean[6];
 		Position next, temp;
-		ArrayList l1, l2, l = new ArrayList();
+		ArrayList<Position> l1, l2, l = new ArrayList<>();
 		int choice;
 		
 		temp = (Position) snake.getFirst();
@@ -71,9 +71,9 @@ public class Snake
 		g.drawPolyline(x, y, n);
 	}
 	
-	private ArrayList validNextPos (Position p)
+	private ArrayList<Position> validNextPos (Position p)
 	{
-		ArrayList l = new ArrayList();
+		ArrayList<Position> l = new ArrayList<>();
 		
 		if (validPos(p.north()))	l.add(p.north());
 		if (validPos(p.south()))	l.add(p.south());
@@ -87,6 +87,6 @@ public class Snake
 	{
 		return p.x >= -SIZE && p.x <= SIZE &&
 			   p.y >= -SIZE && p.y <= SIZE &&
-			   !(new HashSet(snake)).contains(p);
+			   !(new HashSet<Position>(snake)).contains(p);
 	}
 }

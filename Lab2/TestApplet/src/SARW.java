@@ -26,7 +26,7 @@ public class SARW
 	
 	public boolean move (Position p)
 	{
-		ArrayList l = new ArrayList();
+		ArrayList<Position> l = new ArrayList<>();
 		int X, Y;
 		Position next;
 		
@@ -50,7 +50,7 @@ public class SARW
 		return true;
 	}
 	
-	public void validAdd (ArrayList l, Position p)
+	public void validAdd (ArrayList<Position> l, Position p)
 	{
 		Position q = positionMap(p);
 		if (q.x() >= 0 && q.x() < visited.length &&

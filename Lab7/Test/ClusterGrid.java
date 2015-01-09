@@ -6,14 +6,14 @@ public class ClusterGrid
 {
 	// variables
 	private Grid grid;
-	private HashMap clusters;
+	private HashMap<Position, Integer> clusters;
 	private int count;
 	
 	// constructors
 	public ClusterGrid (Grid g)
 	{
 		grid = g;
-		clusters = new HashMap();
+		clusters = new HashMap<>();
 		count = 0;
 	}
 	
@@ -23,7 +23,7 @@ public class ClusterGrid
 	
 	public boolean hasPath ()
 	{
-		HashSet s = new HashSet();
+		HashSet<Integer> s = new HashSet<>();
 		Position p;
 		int i;
 		boolean flag = false;
@@ -51,7 +51,7 @@ public class ClusterGrid
 	// method
 	public void countClusters ()
 	{
-		Stack s = new Stack();
+		Stack<Position> s = new Stack<>();
 		Position p;
 		clusters.clear();
 		
@@ -70,7 +70,7 @@ public class ClusterGrid
 	}
 	
 	// method helper
-	private void killBlob (Stack s, int c)
+	private void killBlob (Stack<Position> s, int c)
 	{
 		if (!s.empty())
 		{

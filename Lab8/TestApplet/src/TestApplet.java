@@ -23,7 +23,7 @@ public class TestApplet extends Applet implements MouseListener
 		bufferGraphics = offscreen.getGraphics();
 		addMouseListener(this);
 		
-		ArrayList l = new ArrayList();
+		ArrayList<Position> l = new ArrayList<>();
 		l.add(new Position(7, 10));
 		l.add(new Position(8, 10));
 		l.add(new Position(8, 11));

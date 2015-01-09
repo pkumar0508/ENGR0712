@@ -15,21 +15,21 @@ public class Grid
 	
 	private final int SIZE;
 	private final int SCALE;
-	private HashSet s;
+	private HashSet<Position> s;
 	
 	// constructor
 	public Grid (int size)
 	{
 		SIZE = size;
 		SCALE = 1;
-		s = new HashSet();
+		s = new HashSet<>();
 	}
 	
 	public Grid (int size, int scale)
 	{
 		SCALE = scale;
 		SIZE = size / scale;
-		s = new HashSet();
+		s = new HashSet<>();
 	}
 	
 	// basic functions

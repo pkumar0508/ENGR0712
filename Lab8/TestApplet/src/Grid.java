@@ -10,11 +10,11 @@ public class Grid
 	private static final Random r = new Random();
 	private static boolean DEBUG = true;
 	
-	private HashSet s;
+	private HashSet<Position> s;
 	
 	// constructor
-	public Grid (Collection c)
-	{ s = new HashSet(c); }
+	public Grid (Collection<Position> c)
+	{ s = new HashSet<>(c); }
 	
 	private void debug (String s)
 	{
@@ -28,9 +28,9 @@ public class Grid
 	// method
 	public void nextGeneration ()
 	{
-		HashSet check = new HashSet(s),
-				next = new HashSet(),
-				temp = new HashSet();
+		HashSet<Position> check = new HashSet<>(s),
+				next = new HashSet<>(),
+				temp = new HashSet<>();
 		int count;
 		boolean alive;
 		Position p, q;

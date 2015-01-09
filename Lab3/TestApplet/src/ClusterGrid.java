@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashSet;
 
 public class ClusterGrid
@@ -56,7 +55,7 @@ public class ClusterGrid
 	
 	public boolean hasPath ()
 	{
-		HashSet s = new HashSet();
+		HashSet<Integer> s = new HashSet<>();
 		boolean flag = false;
 		int j = 0;
 		

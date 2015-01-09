@@ -4,7 +4,7 @@ import java.util.HashSet;
 public class Grid
 {
 	// variables
-	private HashSet grid;
+	private HashSet<Position> grid;
 	private final int SIZE;
 	private static final Random r = new Random();
 	
@@ -12,7 +12,7 @@ public class Grid
 	public Grid (int size)
 	{
 		SIZE = size;
-		grid = new HashSet();
+		grid = new HashSet<>();
 	}
 	
 	// accessors
@@ -29,7 +29,7 @@ public class Grid
 		int i = 0;
 		Position p;
 		
-		grid = new HashSet();
+		grid = new HashSet<>();
 		while (i < n)
 		{
 			p = randomPosition();
