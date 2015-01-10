@@ -2,11 +2,13 @@ ENGR0712
 ========
 
 As a student at the University of Pittsburgh, I took a class called
-"Introduction to High Performance Computing and Modeling," though the class was basically an
-open-ended exploration into the computational implementation of physical and scientific models.
+"Introduction to High Performance Computing and Modeling,"
+though the class was basically an open-ended exploration into the
+computational implementation of physical and scientific models.
 
-The professor described some physical process, and we were told to model it. She didn't care which language,
-but did require that there was pictures to show the model in action. After taking this class,
+The professor described some physical process, and we were told to
+model it. We could use whichever language we preferred as long as
+figures show the model in action. After taking this class,
 I was invited to research with her that summer.
 
 Topics modeled:
@@ -19,5 +21,13 @@ Topics modeled:
 for modeling phase separation of oil, water and soap
 - [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-Implementations are given in Java 4 (predominant Java version at the time).
-The Java applet versions seem to be broken currently, but expect those to be fixed in the near future.
+Implementations are given in Java applets.
+
+Java applets do not work when embedded in a browser, as they
+did years ago (see [link](https://weblogs.java.net/blog/cayhorstmann/archive/2014/01/16/still-using-applets-sign-them-or-else)).
+They do work when run with [`appletviewer`](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/appletviewer.html). So you can run a particular demonstration by going:
+
+    appletviewer Lab<#>/TestApplet.htm
+
+These demonstrations should see a reimplementation in Javascript for
+easier viewing.
