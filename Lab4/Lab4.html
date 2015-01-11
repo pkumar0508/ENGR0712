@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Diffusion Limited Aggregation</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script
+    type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</head>
+
+<body>
+  <h1>Diffusion Limited Aggregation</h1>
+  <h2>Applet</h2>
+  <p>
+    <center>
+      <applet code="Lab4.class" width="600" height="600">
+      </applet>
+    </center>
+  </p>
+  <h2>Hypothesis</h2>
+  <p>
+    For the creation of a collection of particles by diffusion limited
+    aggregation, the resulting arrangement is a fractal.
+  </p>
+  <h2>Methodology</h2>
+  <p>
+    First, a lattice is created to hold all of the particles to be
+    aggregated.  A center particle is placed to initiate the
+    aggregation. Then, particles are introduced at the edges of the grid
+    and find their way to the center particle by means of a
+    non-self-avoiding random walk. Once particles find the center
+    particles or particles that have been attached to connecting
+    particles, the walk of that particle ends and a new particles is
+    introduced to make another random walk.  Once that was coded, the
+    extra feature of the existence of some probability $p$ such that
+    when a particle finds a branch, it will test whether or not it will
+    stop or keep random walking, where $p$ is the probability it stops
+    and $1 − p$ is the probability that it keeps walking.  After that
+    was implemented, the option of having specific colored particles was
+    introduced.  With this playing rule, particles may only stop once
+    they find a compatible neighbor, a neighbor that shares the same
+    color as it.
+  </p>
+  <p>
+    The first version of the program was implemented with an array of
+    Particles.  The second version was implemented with a Hashtable of
+    Positions mapping to Particles.  Thus, memory requirements for the
+    second implementation are independent of size and vary only with the
+    number of particles requested.  Additional features were added to
+    the second version.
+  </p>
+  <h2>Results</h2>
+  <p>
+    The results of the computer simulation show that the arrangement
+    formed is some sort of self-repeating structure, suggesting that it
+    is a fractal.  As the probability $p$ is reduced, the arrangement
+    collapses toward the center, and the resulting structure has a lower
+    average radius.  When colored particles were introduced, the two
+    colors grew along each other.  When the red particles were added in
+    greater number than the green, results suggest that it is not
+    possible to enclose the green particle seed (failed to enclose the
+    green seed at a ratio of 999:1).  Consult the attached pictures.
+  </p>
+  <h2>Conclusion</h2>
+  <p>
+    Through multiple runs, it became very clear that diffusion limited
+    aggregation of particles led to the formation of a fractal.
+    Different rules for different environments led to different
+    formations, but each one was fundamentally fractal-like.
+  </p>
+</body>
+
+</html>

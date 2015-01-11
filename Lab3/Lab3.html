@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cluster Counting and Site Percolation of a Lattice</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script
+  type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</head>
+
+<body>
+  <h1>Cluster Counting and Site Percolation of a Lattice</h1>
+  <h2>Applet</h2>
+  <p>
+    <center>
+      <applet code="Lab3.class" width="600" height="600">
+      </applet>
+    </center>
+  </p>
+  <h2>Hypothesis</h2>
+  <p>
+    Cluster counting, the method of assigning each cluster of percolated
+    sites a group number, provides a visual representation of the
+    percolation of a lattice and an intuitive way to check the
+    percolation of the lattice (whether a path exists across it).
+  </p>
+  <h2>Methodology</h2>
+  <p>
+    The algorithm implemented makes use of two grids to count the
+    clusters. The first is an ordinary grid percolated with $p$ fraction
+    of the sites set to true. The second grid contains the cluster
+    number of each site. Non-percolated sites have a cluster number of
+    zero. All other sites are given cluster numbers of integers greater
+    than zero. The cluster numbers in this algorithm increment down the
+    columns, simply because of the order of the recursive calls. To
+    determine the cluster number of each site, the grid is transversed
+    until a percolated site is found. Then, a recursive function checks
+    all the neighboring sites that are also percolated and assigns the
+    current cluster number to each site before incrementing it for the
+    next cluster. The sites are turned off on the first grid to ensure
+    that the recursive calls do not create an infinite loop.
+  </p>
+  <p>
+    After the first grid has been searched completely, the method for
+    determining the percolation of the lattice merely consists of
+    creating the a set (defined as the collection of items without
+    repeat) of all the cluster numbers of the first row, and searching
+    to see if any cluster numbers of the last row also belong to the
+    set. For the visual interface, the information in the cluster number
+    grid is outputted to the screen. For small lattices, the cluster
+    numbers are outputted in a table in text format. For large lattices,
+    each cluster is assigned a random color and outputted to the screen.
+  </p>
+  <h2>Results</h2>
+  <p>
+    The program allows for the state of the grid, the number of
+    clusters, and the existence of a path to be outputted. If a path
+    exists, the first cluster number on which a path exists can be
+    determined. Sample grids are attached. The number of clusters for a
+    given $p$ value has surprisingly low variance. By choosing different
+    $p$ values, it can be seen that the aggregation patterns change and
+    suggest a critical threshold for the percolation of a lattice and
+    the existence of a percolation threshold $p_c$.
+  </p>
+  <h2>Conclusion</h2>
+  <p>
+    Cluster counting is a method that allows the percolation of lattices
+    to be analyzed, suggesting visual schemes of presentation and
+    providing intuitive methods to obtain desirable information, like
+    whether a path exists or not.
+  </p>
+</body>
+
+</html>

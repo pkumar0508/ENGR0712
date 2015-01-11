@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Metropolis Algorithm and Phase Separation with Surfactant</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script
+  type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</head>
+
+<body>
+  <h1>Metropolis Algorithm and Phase Separation with Surfactant</h1>
+  <h2>Applet</h2>
+  <p>
+    <center>
+      <applet code="Lab7.class" width="600" height="600">
+      </applet>
+    </center>
+  </p>
+  <h2>Hypothesis</h2>
+  <p>
+    The Metropolis Algorithm as implemented in the oil and water case
+    can be modified to include a third surfactant particle in phase
+    separation simulations.  Temperature varies in simulations and the
+    phenomena of simulated annealing can be observed.
+  </p>
+  <h2>Methodology</h2>
+  <p>
+    Instead of two particles as in the last lab, there are three now:
+    oil, soap, water.  All of the same rules apply.  When the algorithm
+    is called, it scans through the grid, picking another point at
+    random and checking whether swapping the two will result in a more
+    favorable state.  If so, the swap is performed.  If not, a
+    probability is generated using the Boltzmann distribution.  Allowing
+    $\Delta E$ to be the change in energy and another parameter $\beta$
+    to relate to the temperature such that $\beta = 1/(kT)$, the formula
+    to calculate the relative probability is $P(S) = e^{-\beta\Delta
+    E}$. The $\beta$ parameter increases with every time step, implying
+    that temperature decreases. This is the implementation of simulated
+    annealing. In terms of $\Delta E$, relative energies are assigned to
+    each of the neighbors. The oil next to water is very unfavorable
+    ($+2$), but next to each other is favorable ($-2$). The soap tends
+    to stick to other soap ($-1$). Instead of oil and water being
+    neighbors, a more favored state is being next to soap (0). Program
+    allows dynamic viewing of the grid.
+  </p>
+  <h2>Results</h2>
+  <p>
+    The grid size dimensions were made 30 by 30.  Letting $N = 1000$ in
+    the two particle case, trials consistently phase separated, so that
+    was what that parameter was set to be.  Refer to the attached trial
+    run screenshots for metropolis algorithm with surfactant.  It was
+    found that when the temperature was considerable low, there was
+    still substantial movement by the particles, as opposed to the two
+    particle case where the particles separated out and did nothing
+    more.  It implies that when soap is introduced, the equilibrium
+    reached (in my simulations) was a dynamic neutral equilibrium, that
+    multiple states had the lowest energies, and there were enough
+    degrees of freedom for the grid to switch between the states.  The
+    soap tends to coat the surfaces of the oil and water droplets.
+  </p>
+  <h2>Conclusion</h2>
+  <p>
+    Using computer simulations, phase separation was able to be modeled
+    when accounting for a surfactant.  By varying temperature, simulated
+    annealing was achieved and could be seen in the visual output to
+    contribute to the complete phase separation of the oil and water
+    particles.
+  </p>
+</body>
+
+</html>

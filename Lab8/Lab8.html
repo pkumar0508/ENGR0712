@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>The Game of Life</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script
+  type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</head>
+
+<body>
+  <h1>The Game of Life</h1>
+  <h2>Applet</h2>
+  <p>
+    <center>
+      <applet code="Lab8.class" width="600" height="600">
+      </applet>
+    </center>
+  </p>
+  <h2>Hypothesis</h2>
+  <p>
+    The Game of Life provides a set of simple rules that allow for
+    cellular automaton.
+  </p>
+  <h2>Methodology</h2>
+  <p>
+    My implementation involves storing all of the particles currently on
+    in a set, a collection that contains all of its elements in no
+    specified order without repetition.  The grid is initialized by
+    reading in a collection of seed points.  To advance to the next
+    generation, Life specifies three rules involving the number of
+    neighbors in all eight directions that are currently on (count):
+  </p>
+  <p>
+    <ol>
+      <li>
+        A cell will be turned off if it is currently on and the
+        count is not 2 or 3.
+      </li>
+      <li>
+        A cell will remain on if it is currently on and the
+        count is 2 or 3.
+      </li>
+      <li>
+        A cell will be turned on if it is currently off and
+        the count is 3.
+      </li>
+    </ol>
+  </p>
+  <p>
+    My implementation accomplishes this by creating another set of the
+    particles to check, which includes all of the current positions and
+    their neighbors.  Then, it iterates over that set and puts the new
+    positions in a new set.  The program allows for dynamic viewing of
+    the advances of generations.
+  </p>
+  <h2>Results</h2>
+  <p>
+    The amazingly simple rules of Life indeed do provide for an
+    elaborate playing field.  The sample run pictures show a simple
+    induction coil progressing through its generations.  Lots of
+    structures and pretty pictures can be generated.
+  </p>
+  <h2>Conclusion</h2>
+  <p>
+    In just three rules, Life provides a complete basis for cellular
+    automaton.
+  </p>
+</body>
+
+</html>
