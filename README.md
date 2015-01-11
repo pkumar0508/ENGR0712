@@ -1,6 +1,14 @@
 ENGR0712
 ========
 
+To compile, in a given lab subdirectory:
+
+    javac *.java
+
+To view the demonstration:
+
+    appletviewer Lab<#>.html
+
 As a student at the University of Pittsburgh, I took a class called
 "Introduction to High Performance Computing and Modeling,"
 though the class was basically an open-ended exploration into the
@@ -25,9 +33,7 @@ Implementations are given in Java applets.
 
 Java applets do not work when embedded in a browser, as they
 did years ago (see [link](https://weblogs.java.net/blog/cayhorstmann/archive/2014/01/16/still-using-applets-sign-them-or-else)).
-They do work when run with [`appletviewer`](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/appletviewer.html). So you can run a particular demonstration by going:
-
-    appletviewer Lab<#>/TestApplet.htm
+They do work when run with [`appletviewer`](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/appletviewer.html).
 
 These demonstrations should see a reimplementation in Javascript for
 easier viewing.
