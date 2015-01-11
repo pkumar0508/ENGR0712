@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Test
+public class Lab1
 {
 	public static void main (String[] args)
 	{
@@ -11,12 +11,12 @@ public class Test
 		double DELTA = .005;
 		double CUTOFF = .9;
 		int N = 100;
-		
+
 		Grid g = new Grid(SIZE);
 		boolean q = false;			// found percolation constant
 		int i;
 		int count;
-		
+
 		while (!q)
 		{
 			count = 0;
@@ -32,39 +32,39 @@ public class Test
 				i++;
 			}
 			System.out.println();
-			
+
 			if (count / N > CUTOFF)
 				q = true;
 			else
 				P += DELTA;
 		}
-		
+
 		System.out.println("\n\n\nPc Found!  Pc = " + P);
 	}
-	
+
 	public static void pyramid (int n)
 	{
 		for (int i = 0; i < n; i++)
 		{
 			for (int j = 0; j < n - i - 1; j++)
 				System.out.print("  ");
-			
+
 			System.out.print("*");
-			
+
 			for (int k = 0; k < 2 * i; k++)
 				System.out.print(" *");
-			
+
 			System.out.println();
 		}
 	}
-	
+
 	public static String generateHexCode (int NUM_DIGITS)
 	{
 		Random r = new Random();
 		int digit;
 		final int BASE = 16;
 		String s = "";
-		
+
 		for (int i = 0; i < NUM_DIGITS; i++)
 			if ((digit = r.nextInt(BASE)) == 0)		s += "0";
 			else if (digit == 1)					s += "1";
@@ -82,7 +82,7 @@ public class Test
 			else if (digit == 13)					s += "D";
 			else if (digit == 14)					s += "E";
 			else									s += "F";
-			
+
 			return s;
 	}
 }
