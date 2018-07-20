@@ -3,7 +3,7 @@ ENGR0712
 
 To compile, in a given lab subdirectory:
 
-    javac *.java
+    javac app/pkumar0508/engr0712/lab1/*.java
 
 To view the demonstration:
 
